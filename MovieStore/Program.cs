@@ -1,6 +1,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using MovieStore.Business.AutoMapper;
+using MovieStore.Core.CrossCuttingConcerns.Logging;
+using MovieStore.Core.Extensions;
 using MovieStore.DataAccess.Abstract;
 using MovieStore.DataAccess.Context;
 using System.Reflection;
@@ -25,6 +27,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MovieStoreDb>(opt => opt.UseInMemoryDatabase(databaseName: "MovieStoreDb"));
 builder.Services.AddScoped<IMovieStoreDb>(provider => provider.GetService<MovieStoreDb>());
 
+builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
+
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
@@ -39,9 +43,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCustomeExeption();
 
 app.MapControllers();
 

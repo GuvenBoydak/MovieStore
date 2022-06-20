@@ -25,9 +25,9 @@ namespace MovieStore.DataAccess.Context
 
                 context.Directors.AddRange(new Director() { Name="Christoper",Surname="Nolan"}, new Director() { Name = "Dennis", Surname = "Villeneuve" }, new Director() { Name = "Todd", Surname = "Philips" });
 
-                context.Customers.AddRange(new Customer() { Name = "Güven", Surname = "Boydak", Email = "gvn.boydak@gmail.com", Password = "12345" },
-                    new Customer() { Name = "Aylin", Surname = "Boydak", Email = "aylinboydak@gmail.com", Password = "12345" },
-                    new Customer() { Name = "Ali", Surname = "Boydak", Email = "aliboydak@gmail.com", Password = "12345" });
+                context.Customers.AddRange(new Customer() { Name = "Güven", Surname = "Boydak", Email = "gvn.boydak@gmail.com", Password = "12345",CreatedDate=DateTime.Now },
+                    new Customer() { Name = "Aylin", Surname = "Boydak", Email = "aylinboydak@gmail.com", Password = "12345", CreatedDate = DateTime.Now },
+                    new Customer() { Name = "Ali", Surname = "Boydak", Email = "aliboydak@gmail.com", Password = "12345", CreatedDate = DateTime.Now });
 
                 context.Orders.AddRange(new Order() { CustomerId = 1, MovieId = 1, OrderDate = DateTime.Now, Price = 100 },
                     new Order() { CustomerId = 2, MovieId = 2, OrderDate = DateTime.Now, Price = 120 },

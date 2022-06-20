@@ -12,9 +12,9 @@ namespace MovieStore.UnitTest.TestSetup
     {
         public static void AddCustomers(this MovieStoreDb db)
         {
-            db.Customers.AddRange(new Customer() { Name = "Güven", Surname = "Boydak", Email = "gvn.boydak@gmail.com", Password = "12345" },
-                    new Customer() { Name = "Aylin", Surname = "Boydak", Email = "aylinboydak@gmail.com", Password = "12345" },
-                    new Customer() { Name = "Ali", Surname = "Boydak", Email = "aliboydak@gmail.com", Password = "12345" });
+            db.Customers.AddRange(new Customer() { Name = "Güven", Surname = "Boydak", Email = "gvn.boydak@gmail.com", Password = "12345", CreatedDate = DateTime.Now },
+                    new Customer() { Name = "Aylin", Surname = "Boydak", Email = "aylinboydak@gmail.com", Password = "12345", CreatedDate = DateTime.Now },
+                    new Customer() { Name = "Ali", Surname = "Boydak", Email = "aliboydak@gmail.com", Password = "12345", CreatedDate = DateTime.Now });
         }
     }
 }

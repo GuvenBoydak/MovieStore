@@ -30,6 +30,7 @@ namespace MovieStore.UnitTest.TestSetup
             Db.AddOrders();
             Db.AddGenres();
             Db.AddDirectors();
+            Db.AddCustomers();
             Db.SaveChanges();
 
             Mapper=new MapperConfiguration(cfg => { cfg.AddProfile<MappingProfile>(); }).CreateMapper();
