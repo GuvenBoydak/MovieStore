@@ -5,6 +5,7 @@ using MovieStore.Entities.ViewModel.CustomerViewModel;
 using MovieStore.Entities.ViewModel.DirectorViewModel;
 using MovieStore.Entities.ViewModel.GenreViewModel;
 using MovieStore.Entities.ViewModel.MovieViewModel;
+using MovieStore.Entities.ViewModel.OrderViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,19 @@ namespace MovieStore.Business.AutoMapper
             CreateMap<CreateDirectorViewModel, Director>();
             CreateMap<Director,GetDetailDirectorViewModel>();
             CreateMap<Director,GetDirectorsViewModel>();
+
+            CreateMap<CreateOrderViewModel, Order>();
+            CreateMap<Customer, GetOrdersViewModel>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(x => x.Name + " " + x.Surname))
+                .ForMember(dest => dest.Movies, opt => opt.MapFrom(x => x.Orders.Select(x => x.movie.Name)))
+                .ForMember(dest => dest.Price, opt => opt.MapFrom(x => x.Orders.Select(x => x.movie.Price)))
+                .ForMember(dest => dest.OrderDate, opt => opt.MapFrom(m => m.Orders.Select(s => s.OrderDate))); 
+
+            CreateMap<Customer, GetDetailOrderViewModel>()
+               .ForMember(dest => dest.FullName, opt => opt.MapFrom(x => x.Name + " " + x.Surname))
+               .ForMember(dest => dest.Movies, opt => opt.MapFrom(x => x.Orders.Select(x => x.movie.Name)))
+               .ForMember(dest => dest.Price, opt => opt.MapFrom(x => x.Orders.Select(x => x.movie.Price)))
+               .ForMember(dest => dest.OrderDate, opt => opt.MapFrom(m => m.Orders.Select(s => s.OrderDate)));
 
 
 

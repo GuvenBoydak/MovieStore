@@ -1,14 +1,18 @@
-﻿using MovieStore.Core.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieStore.Entities.Entities
+namespace MovieStore.Entities.ViewModel.OrderViewModel
 {
-    public class Order:BaseEntity
+    public class CreateOrderViewModel
     {
+        public CreateOrderViewModel()
+        {
+            OrderDate = DateTime.Now;
+        }
+
         public int MovieId { get; set; }
 
         public int CustomerId { get; set; }
@@ -17,12 +21,6 @@ namespace MovieStore.Entities.Entities
 
         public DateTime OrderDate { get; set; }
 
-        public bool IsActive { get; set; } 
-
-        //Relational Property
-        public Movie movie { get; set; }
-
-        public Customer Customer { get; set; }
 
     }
 }
