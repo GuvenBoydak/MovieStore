@@ -2,6 +2,7 @@
 using MovieStore.Entities.Entities;
 using MovieStore.Entities.ViewModel.ActorViewModel;
 using MovieStore.Entities.ViewModel.CustomerViewModel;
+using MovieStore.Entities.ViewModel.DirectorViewModel;
 using MovieStore.Entities.ViewModel.GenreViewModel;
 using MovieStore.Entities.ViewModel.MovieViewModel;
 using System;
@@ -36,6 +37,10 @@ namespace MovieStore.Business.AutoMapper
             CreateMap<CreateActorViewModel, Actor>();
             CreateMap<Actor, GetActorViewModel>();
             CreateMap<Actor, GetDetailActorViewModel>();
+
+            CreateMap<CreateDirectorViewModel, Director>();
+            CreateMap<Director,GetDetailDirectorViewModel>();
+            CreateMap<Director,GetDirectorsViewModel>();
 
 
 
