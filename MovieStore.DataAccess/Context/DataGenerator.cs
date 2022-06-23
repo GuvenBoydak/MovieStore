@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MovieStore.Core.Entities;
 using MovieStore.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace MovieStore.DataAccess.Context
                     new CustomerGenre() { CustomerId = 3, GenreId = 1 });
 
                 context.MovieActors.AddRange(new MovieActor() {ActorId=1,MovieId=3 }, new MovieActor() { ActorId = 2, MovieId = 2 }, new MovieActor() { ActorId = 3, MovieId = 1 });
-
+              
                 context.SaveChanges();
             }
         }

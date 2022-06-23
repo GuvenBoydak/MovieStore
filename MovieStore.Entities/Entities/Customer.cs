@@ -1,4 +1,5 @@
 ﻿using MovieStore.Core.Entities;
+using MovieStore.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,15 @@ namespace MovieStore.Entities.Entities
 
         public string Password { get; set; }
 
-        //Relational Property
-        public ICollection<CustomerGenre> CustomerGenres { get; set; }
+        public string? RefreshToken { get; set; }
 
-        public ICollection<Order> Orders { get; set; }
+        public DateTime? RefreshTokenExpireDate { get; set; }
+
+        //Relational Property
+        public List<CustomerGenre> CustomerGenres { get; set; }
+
+        public List<Order> Orders { get; set; }
+
 
     }
 }

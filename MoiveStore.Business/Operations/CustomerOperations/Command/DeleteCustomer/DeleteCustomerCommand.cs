@@ -1,4 +1,5 @@
-﻿using MovieStore.DataAccess.Abstract;
+﻿
+using MovieStore.DataAccess.Abstract;
 using MovieStore.Entities.Entities;
 using System;
 using System.Collections.Generic;

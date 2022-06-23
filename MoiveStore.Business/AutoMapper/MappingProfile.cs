@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MovieStore.Core.Entities;
 using MovieStore.Entities.Entities;
 using MovieStore.Entities.ViewModel.ActorViewModel;
 using MovieStore.Entities.ViewModel.CustomerViewModel;
